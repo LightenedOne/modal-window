@@ -25,9 +25,11 @@ function closeModal() {
     })
 }
 
-document.addEventListener("keydown", function(e) {
+function closeModalOnEsc(e) {
     console.log(e);
     if(e.key == 'Escape' && !overlay.classList.contains("hidden")) {
         closeModal();
     }
-});
+}
+
+document.addEventListener("keydown", closeModalOnEsc);
